@@ -1,0 +1,29 @@
+.navbar-custom{
+    
+    height: 10vh;
+    
+    
+}
+
+.navbar-custom a {
+
+    font-size: x-large;
+}
+
+.navbar-nav{
+
+    gap: 20px;
+   
+}
+
+
+.header-custom{
+
+    background-image: url(/resources/immagini/header.jpg);
+    background-position: center;
+    background-size: cover;
+   
+    
+    height: 60vh;
+    
+}
