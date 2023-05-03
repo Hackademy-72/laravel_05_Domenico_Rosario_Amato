@@ -1,3 +1,4 @@
+
 .navbar-custom{
     
     height: 10vh;
@@ -19,11 +20,22 @@
 
 .header-custom{
 
-    background-image: url(/resources/immagini/header.jpg);
+    background-image: url(/public/immagini/header.png);
     background-position: center;
     background-size: cover;
    
-    
     height: 60vh;
+}
+
+.header-custom h1{
+
+    padding-top: 10%;
+}
     
+
+.active{
+
+    transform: scale(1.1) !important;
+    background-color: rgba(245, 222, 179, 0.516) !important;
+    border-radius: 10px;
 }

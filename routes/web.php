@@ -21,6 +21,10 @@ Route::get('/', [PublicController::class, 'index'])->name('homePage');
 
 Route::get('/i-nostri-articoli',[ArticleController::class, 'index'])->name('articoli');
 
+Route::post('/i-nostri-articoli/store', [ArticleController::class, 'store'])->name('articoli-store');
+
+Route::get('/articoli-creati', [ArticleController::class, 'created'])->name('articoli-creati');
+
 
 Route::get('/contattaci', [ContactController::class, 'index'])->name('contact_us');
 

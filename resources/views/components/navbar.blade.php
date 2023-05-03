@@ -9,13 +9,16 @@
         
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link text-white active" aria-current="page" href=" {{route('homePage')}} ">Home</a>
+            <a class="nav-link text-white @if(Route::is('homePage')) active @endif" aria-current="page" href=" {{route('homePage')}} ">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href=" {{route('articoli')}} ">articoli</a>
+            <a class="nav-link text-white @if(Route::is('articoli')) active @endif" href=" {{route('articoli')}} ">inserisci gli articoli</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href=" {{route('contact_us')}} ">contattaci</a>
+            <a class="nav-link text-white @if(Route::is('articoli-creati')) active @endif" href=" {{route('articoli-creati')}} ">Lista articoli inseriti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white @if(Route::is('contact_us')) active @endif" href=" {{route('contact_us')}} ">contattaci</a>
           </li>
           
         </ul>

@@ -1,5 +1,12 @@
 <x-layout header="HOMEPAGE">
 
+    @if(session('articleCreated'))
+        <div class="alert alert-success text-center">
+            {{ session('articleCreated') }}
+        </div>
+    @endif
+
+
     @if(session('emailSent'))
         <div class="alert alert-success text-center">
             {{ session('emailSent') }}
