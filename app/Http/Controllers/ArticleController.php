@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
@@ -12,7 +13,7 @@ class ArticleController extends Controller
         return view('articoli');
     }
 
-    public function store(Request $request){
+    public function store(ArticleRequest $request){
 
         // $article = new Article();
 
@@ -26,7 +27,8 @@ class ArticleController extends Controller
 
             'article' => $request->article,
             'category' => $request->category,
-            'price' => $request->price
+            'price' => $request->price,
+            'image'=>$request->file('image')->store('public/images'),
 
         ]);
 

@@ -6,7 +6,7 @@
         @foreach($articles as $article)
             <div class="col-12 col-md-4 my-4">
                 <div class="card">
-                    <img src="https://picsum.photos/300" class="card-img-top" alt="...">
+                    <img src="{{Storage::url($article->image)}}" class="card-img-top img-fluid" alt="immagine articolo">
                     <div class="card-body">
                         <h5 class="card-title text-warning">{{$article->article}}</h5>
                         <p class="card-text">Categoria: {{$article->category}}</p>

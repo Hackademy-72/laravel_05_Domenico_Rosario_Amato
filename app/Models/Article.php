@@ -13,6 +13,7 @@ class Article extends Model
 
         'article',
         'category',
-        'price'
+        'price',
+        'image'
     ];  
 }
