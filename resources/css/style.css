@@ -55,3 +55,9 @@
     background-color: rgba(245, 222, 179, 0.516) !important;
     border-radius: 10px;
 }
+
+.linkCustom{
+
+    text-decoration: none;
+    color: gray;
+}

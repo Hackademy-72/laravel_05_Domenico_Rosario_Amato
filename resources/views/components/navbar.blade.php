@@ -20,17 +20,36 @@
           <li class="nav-item">
             <a class="nav-link text-white @if(Route::is('contact_us')) active @endif" href=" {{route('contact_us')}} ">contattaci</a>
           </li>
+          
+          @auth
+              
           <li class="nav-item dropdown bg-secondary">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Bentornat* {{Auth::user()->name}}
+            </a>
+            <ul class="dropdown-menu bg-secondary">
+              <li><a class="dropdown-item text-white" href="#">profilo</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-white" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
+              
+              <form id="form-logout" action="{{route('logout')}}" method="POST" class="d-none">@csrf</form>
+            </ul>
+          </li>
+    
+          @else
+              
+          <li class="nav-item dropdown bg-secondary">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Benvenuto Ospite
             </a>
             <ul class="dropdown-menu bg-secondary">
               <li><a class="dropdown-item text-white" href="{{route('login')}}">Accedi</a></li>
-              <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+              <li><a class="dropdown-item text-white" href="{{route('register')}}">Registrati</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
             </ul>
           </li>
+
+          @endauth
           
         </ul>
       </div>
