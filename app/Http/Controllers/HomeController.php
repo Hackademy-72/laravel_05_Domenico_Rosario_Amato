@@ -30,7 +30,16 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $home = Home::create([
+
+            'typology' => $request->typology,
+            'size' => $request->size,
+            'price' => $request->price,
+            'description' => $request->description,
+            'image' => $request->file('image')->store('public/photoHome'),
+        ]);
+
+        return redirect(route('home.index'))->with('HomeCreated', 'Hai creato con successo l\'annuncio della casa');
     }
 
     /**

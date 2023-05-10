@@ -1,5 +1,11 @@
 <x-layout header="annunci case inseriti">
 
+    @if (session('HomeCreated'))
+        <div class="alert alert-success">
+            {{ session('HomeCreated') }}
+        </div>
+    @endif
+
     <div class="container my-5">
         <div class="row justify-content-center">
 
@@ -11,9 +17,9 @@
                         <div class="card">
                             <img src="{{Storage::url($home->image)}}" class="card-img-top img-fluid" alt="immagine articolo">
                             <div class="card-body">
-                                <h5 class="card-title text-warning">Tipologia: {{$home->typology}}</h5>
-                                <p class="card-text">Grandezza: {{$home->size}} MTQ</p>
-                                <h2 class="card-text bold">Prezzo: {{$home->price}} €</h3>
+                                <h5 class="card-title">Tipologia: {{$home->typology}}</h5>
+                                <h3 class="card-text">Grandezza: {{$home->size}} MTQ</h3>
+                                <h2 class="card-text ">Prezzo: {{$home->price}} €</h2>
                                 <p class="card-text">Descrizione: {{$home->description}}</p>   
                             </div>
                         </div>    

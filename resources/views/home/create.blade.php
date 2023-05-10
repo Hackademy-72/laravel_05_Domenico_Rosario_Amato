@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
 
-            <form class="p-5 my-5 shadow" method="POST" action="" enctype="multipart/form-data">
+            <form class="p-5 my-5 shadow" method="POST" action="{{route('home.store')}}" enctype="multipart/form-data">
 
                 @csrf
 
