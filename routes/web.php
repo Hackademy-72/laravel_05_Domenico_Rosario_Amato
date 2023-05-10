@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
@@ -29,3 +30,8 @@ Route::get('/articoli-creati', [ArticleController::class, 'created'])->name('art
 Route::get('/contattaci', [ContactController::class, 'index'])->name('contact_us');
 
 Route::post('/contattaci/submit',[ContactController::class, 'contact_us_submit'])->name('contact.us.submit');
+
+
+Route::get('/home/index', [HomeController::class, 'index'])->name('home.index');
+
+Route::get('/home/create', [HomeController::class, 'create'])->name('home.create');
