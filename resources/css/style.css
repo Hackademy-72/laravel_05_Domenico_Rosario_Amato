@@ -30,6 +30,7 @@
 .nav-item a:hover{
 
     color: wheat !important;
+    background-color: transparent;
 }
     
 

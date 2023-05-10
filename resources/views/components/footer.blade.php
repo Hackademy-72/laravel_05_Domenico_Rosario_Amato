@@ -115,7 +115,7 @@
     <!-- Copyright -->
     <div class="text-center p-4">
       © 2021 Copyright:
-      <a class="text-reset fw-bold" href="{{route('homePage')}}">laravel4.com</a>
+      <a class="text-reset fw-bold" href="{{route('homePage')}}">laravel-7.com</a>
     </div>
     <!-- Copyright -->
   </footer>

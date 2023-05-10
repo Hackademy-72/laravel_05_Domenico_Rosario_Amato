@@ -20,6 +20,17 @@
           <li class="nav-item">
             <a class="nav-link text-white @if(Route::is('contact_us')) active @endif" href=" {{route('contact_us')}} ">contattaci</a>
           </li>
+          <li class="nav-item dropdown bg-secondary">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu bg-secondary">
+              <li><a class="dropdown-item text-white" href="{{route('login')}}">Accedi</a></li>
+              <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+            </ul>
+          </li>
           
         </ul>
       </div>
