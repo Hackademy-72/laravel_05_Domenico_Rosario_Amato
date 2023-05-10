@@ -38,6 +38,8 @@
                         </div>
                         <div class="col-6 text-end">
                             <a class="linkCustom" href="{{route('register')}}">Non sei Registrato?</a>
+
+                            <a class="linkCustom p-5" href="{{route('password.request')}}">Password dimenticata?</a>
                         </div>
                     </div>
                   
