@@ -6,17 +6,18 @@
 
             <form class="p-5 my-5 shadow" method="POST" action="{{route('home.store')}}" enctype="multipart/form-data">
 
-                @csrf
-
                 @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
                 @endif
+                
+                
+                @csrf
 
                 <div class="mb-3">
                   <label for="typology" class="form-label">Tipologia casa <span class="text-danger">*</span></label>

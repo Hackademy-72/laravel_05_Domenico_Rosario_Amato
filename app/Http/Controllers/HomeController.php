@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index', 'show');
+    }    
     /**
      * Display a listing of the resource.
      */
@@ -47,7 +52,7 @@ class HomeController extends Controller
      */
     public function show(Home $home)
     {
-        //
+        return view('home.show', compact('home'));
     }
 
     /**

@@ -37,3 +37,5 @@ Route::get('/home/index', [HomeController::class, 'index'])->name('home.index');
 Route::get('/home/create', [HomeController::class, 'create'])->name('home.create');
 
 Route::post('/home/store', [HomeController::class, 'store'])->name('home.store');
+
+Route::get('/home/show{home}', [HomeController::class, 'show'])->name('home.show');
