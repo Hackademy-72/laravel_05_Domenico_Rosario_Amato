@@ -20,6 +20,7 @@
                                 <h5 class="card-title">Tipologia: {{$home->typology}}</h5>
                                 <h3 class="card-text">Grandezza: {{$home->size}} MTQ</h3>
                                 <a href="{{route('home.show', compact('home'))}}" class="btn btn-secondary">Maggiori informazioni</a>
+                                <a href="{{route('home.edit', compact('home'))}}" class="btn btn-warning">Modifica annuncio</a>
                             </div>
                         </div>    
                     </div>

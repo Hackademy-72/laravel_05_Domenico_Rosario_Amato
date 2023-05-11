@@ -41,8 +41,14 @@ class HomeController extends Controller
             'size' => $request->size,
             'price' => $request->price,
             'description' => $request->description,
-            'image' => $request->file('image')->store('public/photoHome'),
         ]);
+
+        if($request->image){
+
+            $home->update([
+                'image' => $request->file('image')->store('public/photoHome'),
+            ]);
+        }
 
         return redirect(route('home.index'))->with('HomeCreated', 'Hai creato con successo l\'annuncio della casa');
     }
@@ -60,7 +66,7 @@ class HomeController extends Controller
      */
     public function edit(Home $home)
     {
-        //
+        return view('home.edit', compact('home'));
     }
 
     /**
@@ -68,7 +74,22 @@ class HomeController extends Controller
      */
     public function update(Request $request, Home $home)
     {
-        //
+        $home->update([
+
+            'typology' => $request->typology,
+            'size' => $request->size,
+            'price' => $request->price,
+            'description' => $request->description,
+        ]);
+        
+        if($request->image){
+
+            $home->update([
+                'image' => $request->file('image')->store('public/photoHome'),
+            ]);
+        }
+
+        return redirect(route('home.index'))->with('HomeUpdated', 'Hai correttamente aggiornato l\'annuncio');
     }
 
     /**

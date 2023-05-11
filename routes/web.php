@@ -39,3 +39,7 @@ Route::get('/home/create', [HomeController::class, 'create'])->name('home.create
 Route::post('/home/store', [HomeController::class, 'store'])->name('home.store');
 
 Route::get('/home/show{home}', [HomeController::class, 'show'])->name('home.show');
+
+Route::get('/home/edit{home}', [HomeController::class, 'edit'])->name('home.edit');
+
+Route::put('/home/update{home}', [HomeController::class, 'update'])->name('home.update');
