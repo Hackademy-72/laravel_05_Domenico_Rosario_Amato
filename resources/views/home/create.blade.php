@@ -27,7 +27,7 @@
 
                 <div class="mb-3">
                     <label for="size" class="form-label">Grandezza casa (MTQ) <span class="text-danger">*</span></label>
-                    <input type="number" name="size" class="form-control" id="size" value="{{ old('size') }}" placeholder="200, 70, ecc.">
+                    <input type="numeric" name="size" class="form-control" id="size" value="{{ old('size') }}" placeholder="200, 70, ecc.">
                 </div>
 
                 

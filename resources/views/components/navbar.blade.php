@@ -40,7 +40,7 @@
                 Bentornat* {{Auth::user()->name}}
               </a>
               <ul class="dropdown-menu bg-secondary">
-                <li><a class="dropdown-item text-white" href="#">profilo</a></li>
+                <li><a class="dropdown-item text-white" href="{{route('user.profile')}}">profilo</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item text-white" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
                 

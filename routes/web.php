@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
@@ -43,3 +44,8 @@ Route::get('/home/show{home}', [HomeController::class, 'show'])->name('home.show
 Route::get('/home/edit{home}', [HomeController::class, 'edit'])->name('home.edit');
 
 Route::put('/home/update{home}', [HomeController::class, 'update'])->name('home.update');
+
+Route::delete('/home/destroy{home}', [HomeController::class, 'destroy'])->name('home.destroy');
+
+
+Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Home;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -41,6 +42,7 @@ class HomeController extends Controller
             'size' => $request->size,
             'price' => $request->price,
             'description' => $request->description,
+            'user_id'=> Auth::user()->id,
         ]);
 
         if($request->image){
@@ -97,6 +99,9 @@ class HomeController extends Controller
      */
     public function destroy(Home $home)
     {
-        //
+        $home->delete();
+
+        return redirect(route('home.index'))->with('HomeDeleted', 'Hai cancellato correttamente l\'annuncio');
+        
     }
 }
