@@ -108,9 +108,24 @@ class HomeController extends Controller
      */
     public function destroy(Home $home)
     {
+        // foreach($home->articles as $article){
+
+        //     $home->articles()->detach($article->id);
+        // };
+
+        $home->articles()->detach($home->articles);
+
         $home->delete();
 
         return redirect(route('home.index'))->with('HomeDeleted', 'Hai cancellato correttamente l\'annuncio');
         
+    }
+
+    public function detach(Home $home , Article $article){
+
+        $home->articles()->detach($article);
+
+        return redirect()->back()->with('ArticleDetach', 'Hai cancellato correttamnete l\'articolo correlato');
+
     }
 }

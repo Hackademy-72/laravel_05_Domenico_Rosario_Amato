@@ -1,5 +1,12 @@
 <x-layout header="MODIFICA IL TUO ANNUNCIO">
 
+    @if(session('ArticleDetach'))
+        <div class="alert alert-success text-center">
+            {{ session('ArticleDetach') }}
+        </div>
+    @endif
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
@@ -42,6 +49,26 @@
                     <input type="file" name="image" class="form-control" id="image" >
                 </div>
 
+                <div class="mb-3">
+
+
+                    @if (count($home->articles))
+                            <h3>Articoli attualmente implentati:</h3>
+                                <ul>                                   
+                                    @foreach ($home->articles as $article)
+                                <li class="bold">{{$article->article}}, prezzo: {{$article->price}} €
+                                    <a href="{{route('home.detach', compact('home','article'))}}" title="cancella articolo" class="btn"><i class="fa-solid fa-circle-xmark text-danger ps-2"></i></a>
+                                </li>
+                                @endforeach
+                            </ul>
+                    @endif
+                </div>
+                                        
+                                        
+
+                                        
+
+
                 {{-- CHECKBOX MANY TO MANY --}}
                 <div class="mb-3">
                     <label for="" class="form-label">Implementa un articolo a tua scelta</label><br>
@@ -75,8 +102,5 @@
         </div>
     </div>
 </div>
-
-
-
 
 </x-layout>

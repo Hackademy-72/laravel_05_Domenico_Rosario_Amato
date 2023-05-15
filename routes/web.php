@@ -47,6 +47,8 @@ Route::put('/home/update{home}', [HomeController::class, 'update'])->name('home.
 
 Route::delete('/home/destroy{home}', [HomeController::class, 'destroy'])->name('home.destroy');
 
+Route::get('/home{home}/detach/{article}', [HomeController::class, 'detach'])->name('home.detach');
+
 
 Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
 
