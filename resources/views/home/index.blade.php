@@ -41,16 +41,18 @@
 
                                     <a href="{{route('home.show', compact('home'))}}" class="btn btn-secondary">Maggiori informazioni</a>
                                     
-                                    @if($home->user_id && $home->user->id == Auth::user()->id)
-                                        <a href="{{route('home.edit', compact('home'))}}" class="btn btn-warning">Modifica annuncio</a>
-                                        <form action="{{route('home.destroy', compact('home'))}}" method="POST" class="pt-3">
+                                    @auth
+                                        @if($home->user_id && $home->user->id == Auth::user()->id)
+                                            <a href="{{route('home.edit', compact('home'))}}" class="btn btn-warning">Modifica annuncio</a>
+                                            <form action="{{route('home.destroy', compact('home'))}}" method="POST" class="pt-3">
+                                                
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger" type="submit">Cancella annuncio</button>
                                             
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger" type="submit">Cancella annuncio</button>
-                                        
-                                        </form>
-                                    @endif
+                                            </form>
+                                        @endif    
+                                    @endauth
                                         
                                 </div>
                                 

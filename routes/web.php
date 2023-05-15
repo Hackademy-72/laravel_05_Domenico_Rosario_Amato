@@ -49,3 +49,5 @@ Route::delete('/home/destroy{home}', [HomeController::class, 'destroy'])->name('
 
 
 Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
+
+Route::delete('/profile/destroy', [UserController::class, 'destroy'])->name('user.destroy');

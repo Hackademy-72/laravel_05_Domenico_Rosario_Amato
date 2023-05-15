@@ -13,6 +13,12 @@
         </div>
     @endif
 
+    @if(session('UserDeleted'))
+        <div class="alert alert-danger text-center">
+            {{ session('UserDeleted') }}
+        </div>
+    @endif
+
 
     <div class="container-fluid my-5 vh-25">
         <div class="row">
