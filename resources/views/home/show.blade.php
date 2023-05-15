@@ -12,6 +12,19 @@
                         <hr>
                         <p class="card-text">Descrizione: {{$home->description}}</p>
                         <hr>
+
+                        @if (count($home->articles))
+                            <h3>Articoli correlati:</h3>
+                                <ul>                                   
+                                    @foreach ($home->articles as $article)
+                                        <li class="bold">{{$article->article}}, prezzo: {{$article->price}} €</li>
+                                    @endforeach
+                                </ul>
+                        @endif
+                        
+
+
+                        <hr>
                         <p>Annuncio creato il. {{$home->created_at}}</p>
                         <a href="{{route('home.index', compact('home'))}}" class="btn btn-secondary">Torna indietro</a>
                     </div>

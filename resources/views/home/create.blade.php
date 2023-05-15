@@ -35,6 +35,20 @@
                     <label for="image" class="form-label">Immagine casa</label>
                     <input type="file" name="image" class="form-control" id="image" >
                 </div>
+
+                {{-- CHECKBOX MANY TO MANY --}}
+                <div class="mb-3">
+                    <label for="" class="form-label">Implementa un articolo a tua scelta</label><br>
+                    
+                    @foreach($articles as $article)
+                        <input type="checkbox" id="{{$article->id}}" value="{{$article->id}}" name="articles[]">
+
+                        <label for="{{$article->id}}" class="form-label">{{$article->article}}</label><br>
+                    @endforeach
+
+                </div>
+                {{-- FINE CHECKBOX MANY TO MANY --}}
+
                 
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo casa <span class="text-danger">*</span></label>

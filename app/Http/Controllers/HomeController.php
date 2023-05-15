@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,7 +29,9 @@ class HomeController extends Controller
      */
     public function create()
     {
-        return view('home.create');
+        $articles = Article::all();
+
+        return view('home.create', compact('articles'));
     }
 
     /**
@@ -52,6 +55,8 @@ class HomeController extends Controller
             ]);
         }
 
+        $home->articles()->attach($request->articles);
+
         return redirect(route('home.index'))->with('HomeCreated', 'Hai creato con successo l\'annuncio della casa');
     }
 
@@ -68,7 +73,9 @@ class HomeController extends Controller
      */
     public function edit(Home $home)
     {
-        return view('home.edit', compact('home'));
+        $articles = Article::all();
+
+        return view('home.edit', compact('home', 'articles'));
     }
 
     /**
@@ -90,6 +97,8 @@ class HomeController extends Controller
                 'image' => $request->file('image')->store('public/photoHome'),
             ]);
         }
+
+        $home->articles()->attach($request->articles);
 
         return redirect(route('home.index'))->with('HomeUpdated', 'Hai correttamente aggiornato l\'annuncio');
     }
